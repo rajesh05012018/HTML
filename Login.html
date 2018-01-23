@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>
+			Login Page
+		</title>
+		<script language="javascript">
+			function Login()
+			{
+				var x = document.getElementById("username").value;
+				if (x == "") {
+        					alert("User Name? ");
+        					return false;
+    					}
+				var x = document.getElementById("password").value;
+    				if (x == "") {
+        					alert("Password?");
+        					return false;
+    					}
+				Redirect();
+				//ValidateEmail("username");
+			}
+
+			function ValidateEmail(mail)
+			{
+				 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    				if (re.test(mail.value) == false) 
+        			{
+            				alert('Invalid Email Address');
+           				 return false;
+        			}
+				return true;				
+			}
+
+			function Redirect() {
+               			window.location="http://www.google.com";
+            		}
+		</script>
+	</head>
+	<body>
+		<form>
+  			UserName:<br>
+  			<input type="text" id="username"><br>
+  			Password:<br>
+  			<input type="text" id="password">
+			<button type="button" onclick="Login()">Login</button>
+		</form>
+	</body>
+</html>
